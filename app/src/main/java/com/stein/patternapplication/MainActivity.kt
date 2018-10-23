@@ -1,12 +1,9 @@
 package com.stein.patternapplication
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.RelativeLayout
-import android.widget.TextView
 import com.stein.patternapplication.abs_factory.ClassicWidgetFactory
 import com.stein.patternapplication.abs_factory.DarkWidgetFactory
 import com.stein.patternapplication.abs_factory.WidgetAbstractFactory
@@ -38,8 +35,6 @@ class MainActivity : AppCompatActivity() {
             widgetFactory = classicWidgetFactory
             refreshContainer()
         }
-
-        //todo continue with setup and upload to GitHub
     }
 
     private fun refreshContainer() {
