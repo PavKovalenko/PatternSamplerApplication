@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         container.addView(widgetFactory.createButton(), getTopRightParams())
         container.addView(widgetFactory.createButton(), getBottomLeftParams())
         container.addView(widgetFactory.createButton(), getBottomRightParams())
+
+        container.addView(widgetFactory.createGalleryImageView(), getCenterParams())
     }
 
     private fun getTopLeftParams(): RelativeLayout.LayoutParams =
@@ -71,6 +73,13 @@ class MainActivity : AppCompatActivity() {
             RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_END)
+        return layoutParams
+    }
+
+    private fun getCenterParams(): RelativeLayout.LayoutParams {
+        val layoutParams =
+            RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT)
         return layoutParams
     }
 
