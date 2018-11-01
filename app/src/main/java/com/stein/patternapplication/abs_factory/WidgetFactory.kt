@@ -18,6 +18,8 @@ class ClassicWidgetFactory(private val context: Context) : WidgetAbstractFactory
     override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context)
         .setImage(R.drawable.cadillac)
         .addBorder(3)
+        .setTitle("Cadillac")
+        .setYear("1956")
         .build()
 }
 
@@ -27,5 +29,7 @@ class DarkWidgetFactory(private val context: Context) : WidgetAbstractFactory() 
     override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context)
         .setImage(R.drawable.dark_cadillac)
         .addBorder(24)
+        .setTitle("Black Cadillac")
+        .setYear("1958")
         .build()
 }

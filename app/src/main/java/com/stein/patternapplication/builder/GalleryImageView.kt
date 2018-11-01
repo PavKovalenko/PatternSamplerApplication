@@ -14,9 +14,6 @@ class GalleryImageView(context: Context) : FrameLayout(context) {
     }
 
     class Builder(context: Context) {
-
-        //todo finished add title and year
-
         private val galleryImageView: GalleryImageView = GalleryImageView(context)
 
         fun setImage(resId: Int): Builder {
@@ -31,6 +28,22 @@ class GalleryImageView(context: Context) : FrameLayout(context) {
             galleryImageView.galleryImage.apply {
                 visibility = VISIBLE
                 setImageDrawable(drawable)
+            }
+            return this
+        }
+
+        fun setTitle(title: String): Builder {
+            galleryImageView.imageTitle.apply {
+                visibility = VISIBLE
+                setText(title)
+            }
+            return this
+        }
+
+        fun setYear(year: String): Builder {
+            galleryImageView.imageYear.apply {
+                visibility = VISIBLE
+                setText(year)
             }
             return this
         }
