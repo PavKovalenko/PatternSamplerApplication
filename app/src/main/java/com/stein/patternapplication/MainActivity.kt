@@ -43,15 +43,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fillContainer() {
-        container.addView(widgetFactory.createButton(), getTopLeftParams())
-        container.addView(widgetFactory.createButton(), getTopRightParams())
-        container.addView(widgetFactory.createButton(), getBottomLeftParams())
-        container.addView(widgetFactory.createButton(), getBottomRightParams())
+        with(container) {
+            addView(widgetFactory.createButton(), getTopLeftParams())
+            addView(widgetFactory.createButton(), getTopRightParams())
+            addView(widgetFactory.createButton(), getBottomLeftParams())
+            addView(widgetFactory.createButton(), getBottomRightParams())
 
-        container.addView(widgetFactory.createGalleryImageView(), getCenterParams())
+            addView(widgetFactory.createGalleryImageView(), getCenterParams())
+        }
     }
 
-    private fun getTopLeftParams(): RelativeLayout.LayoutParams =
+    private fun getTopLeftParams() =
         RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
     private fun getTopRightParams(): RelativeLayout.LayoutParams {

@@ -3,6 +3,7 @@ package com.stein.patternapplication.abs_factory
 import android.content.Context
 import android.widget.Button
 import android.widget.ImageView
+import com.stein.patternapplication.R
 import com.stein.patternapplication.builder.GalleryImageView
 
 abstract class WidgetAbstractFactory() {
@@ -14,11 +15,17 @@ abstract class WidgetAbstractFactory() {
 class ClassicWidgetFactory(private val context: Context) : WidgetAbstractFactory() {
     override fun createImageView(): ImageView = ClassicImageView(context)
     override fun createButton(): Button = ClassicButton(context)
-    override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context).build()
+    override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context)
+        .setImage(R.drawable.cadillac)
+        .addBorder(3)
+        .build()
 }
 
 class DarkWidgetFactory(private val context: Context) : WidgetAbstractFactory() {
     override fun createImageView(): ImageView = DarkImageView(context)
     override fun createButton(): Button = DarkButton(context)
-    override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context).build()
+    override fun createGalleryImageView(): GalleryImageView = GalleryImageView.Builder(context)
+        .setImage(R.drawable.dark_cadillac)
+        .addBorder(24)
+        .build()
 }
